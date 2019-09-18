@@ -1,0 +1,83 @@
+\begin{sphinxtheindex}
+\let\bigletter\sphinxstyleindexlettergroup
+\let\spxpagem \sphinxstyleindexpagemain
+\let\spxentry \sphinxstyleindexentry
+\let\spxextra \sphinxstyleindexextra
+
+  \bigletter B
+  \item \spxentry{best\_of\_generation()}\spxextra{genetic\_optimizer.GeneticNeuralOptimizer method}, 
+		\hyperpage{1}
+  \item \spxentry{best\_of\_generation()}\spxextra{genetic\_optimizer.GeneticNeuralWeightOptimizer method}, 
+		\hyperpage{2}
+  \item \spxentry{best\_of\_generation()}\spxextra{genetic\_optimizer.GeneticRegularizator method}, 
+		\hyperpage{5}
+
+  \indexspace
+  \bigletter F
+  \item \spxentry{fit()}\spxextra{genetic\_optimizer.GeneticNeuralOptimizer method}, \hyperpage{1}
+  \item \spxentry{fit()}\spxextra{genetic\_optimizer.GeneticNeuralWeightOptimizer method}, 
+		\hyperpage{3}
+  \item \spxentry{fit()}\spxextra{genetic\_optimizer.GeneticRegularizator method}, \hyperpage{5}
+  \item \spxentry{fitness()}\spxextra{genetic\_optimizer.GeneticNeuralOptimizer method}, 
+		\hyperpage{1}
+  \item \spxentry{fitness()}\spxextra{genetic\_optimizer.GeneticNeuralWeightOptimizer method}, 
+		\hyperpage{3}
+  \item \spxentry{fitness()}\spxextra{genetic\_optimizer.GeneticRegularizator method}, 
+		\hyperpage{5}
+
+  \indexspace
+  \bigletter G
+  \item \spxentry{GA()}\spxextra{genetic\_optimizer.GeneticNeuralOptimizer method}, \hyperpage{1}
+  \item \spxentry{GA()}\spxextra{genetic\_optimizer.GeneticNeuralWeightOptimizer method}, 
+		\hyperpage{2}
+  \item \spxentry{GA()}\spxextra{genetic\_optimizer.GeneticRegularizator method}, \hyperpage{4}
+  \item \spxentry{generate\_population()}\spxextra{genetic\_optimizer.GeneticOptimizer method}, 
+		\hyperpage{3}
+  \item \spxentry{genetic\_optimizer}\spxextra{module}, \hyperpage{1}
+  \item \spxentry{GeneticNeuralOptimizer}\spxextra{class in genetic\_optimizer}, \hyperpage{1}
+  \item \spxentry{GeneticNeuralWeightOptimizer}\spxextra{class in genetic\_optimizer}, 
+		\hyperpage{2}
+  \item \spxentry{GeneticOptimizer}\spxextra{class in genetic\_optimizer}, \hyperpage{3}
+  \item \spxentry{GeneticRegularizator}\spxextra{class in genetic\_optimizer}, \hyperpage{4}
+
+  \indexspace
+  \bigletter M
+  \item \spxentry{mutate()}\spxextra{genetic\_optimizer.GeneticOptimizer method}, \hyperpage{4}
+
+  \indexspace
+  \bigletter O
+  \item \spxentry{original\_weights\_shape()}\spxextra{genetic\_optimizer.GeneticOptimizer method}, 
+		\hyperpage{4}
+
+  \indexspace
+  \bigletter R
+  \item \spxentry{random\_selection()}\spxextra{genetic\_optimizer.GeneticOptimizer method}, 
+		\hyperpage{4}
+  \item \spxentry{reproduce()}\spxextra{genetic\_optimizer.GeneticOptimizer static method}, 
+		\hyperpage{4}
+
+  \indexspace
+  \bigletter T
+  \item \spxentry{transform\_weights()}\spxextra{genetic\_optimizer.GeneticNeuralOptimizer method}, 
+		\hyperpage{2}
+  \item \spxentry{transform\_weights()}\spxextra{genetic\_optimizer.GeneticNeuralWeightOptimizer method}, 
+		\hyperpage{3}
+  \item \spxentry{transform\_weights()}\spxextra{genetic\_optimizer.GeneticRegularizator method}, 
+		\hyperpage{5}
+
+  \indexspace
+  \bigletter W
+  \item \spxentry{weights\_to\_vector()}\spxextra{genetic\_optimizer.GeneticNeuralOptimizer method}, 
+		\hyperpage{2}
+  \item \spxentry{weights\_to\_vector()}\spxextra{genetic\_optimizer.GeneticNeuralWeightOptimizer method}, 
+		\hyperpage{3}
+  \item \spxentry{weights\_to\_vector()}\spxextra{genetic\_optimizer.GeneticRegularizator method}, 
+		\hyperpage{5}
+  \item \spxentry{weights\_to\_vector2()}\spxextra{genetic\_optimizer.GeneticNeuralOptimizer method}, 
+		\hyperpage{2}
+  \item \spxentry{weights\_to\_vector2()}\spxextra{genetic\_optimizer.GeneticNeuralWeightOptimizer method}, 
+		\hyperpage{3}
+  \item \spxentry{weights\_to\_vector2()}\spxextra{genetic\_optimizer.GeneticRegularizator method}, 
+		\hyperpage{5}
+
+\end{sphinxtheindex}

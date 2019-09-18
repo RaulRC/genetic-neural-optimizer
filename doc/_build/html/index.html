@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Genetic Neural Optimizer’s documentation &#8212; Genetic Neural Optimizer 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Genetic Neural Optimizer 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-genetic_optimizer">
+<span id="genetic-neural-optimizer-s-documentation"></span><h1>Genetic Neural Optimizer’s documentation<a class="headerlink" href="#module-genetic_optimizer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="genetic_optimizer.GeneticNeuralOptimizer">
+<em class="property">class </em><code class="sig-prename descclassname">genetic_optimizer.</code><code class="sig-name descname">GeneticNeuralOptimizer</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">mutation_prob=0.5</em>, <em class="sig-param">mutation_rate=None</em>, <em class="sig-param">elite=2</em>, <em class="sig-param">genetic_train=True</em>, <em class="sig-param">stop_condition=None</em>, <em class="sig-param">epochs=-1</em>, <em class="sig-param">fitness_function=&lt;function GeneticNeuralOptimizer.&lt;lambda&gt;&gt;</em>, <em class="sig-param">mutables=1</em>, <em class="sig-param">original_mutation_prob=0.5</em>, <em class="sig-param">pop_dist='uniform'</em>, <em class="sig-param">mutation_dist=&lt;built-in method uniform of mtrand.RandomState object&gt;</em>, <em class="sig-param">min_delta=1.0</em>, <em class="sig-param">regularization_metric='val_acc'</em>, <em class="sig-param">iterations=None</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralOptimizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>GeneticNeuralOptimizer class.</p>
+<blockquote>
+<div><p>Train a Neural Network using a Genetic Algorithm.</p>
+</div></blockquote>
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralOptimizer.GA">
+<code class="sig-name descname">GA</code><span class="sig-paren">(</span><em class="sig-param">population</em>, <em class="sig-param">iterations</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">x_test</em>, <em class="sig-param">y_test</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralOptimizer.GA" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>population</strong> – initial population. List of numpy vectors</p></li>
+<li><p><strong>iterations</strong> – integer. Number of generations</p></li>
+<li><p><strong>x</strong> – train dataset (numpy array)</p></li>
+<li><p><strong>y</strong> – labels for train dataset (numpy vector)</p></li>
+<li><p><strong>x_test</strong> – test dataset (numpy array)</p></li>
+<li><p><strong>y_test</strong> – labels for test dataset (numpy vector)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple (best individual found as numpy vector, max value found, history of bests)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralOptimizer.best_of_generation">
+<code class="sig-name descname">best_of_generation</code><span class="sig-paren">(</span><em class="sig-param">fitness</em>, <em class="sig-param">population</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralOptimizer.best_of_generation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fitness</strong> – fitness function</p></li>
+<li><p><strong>eq</strong> – equation to maximize</p></li>
+<li><p><strong>population</strong> – list of individuals (numpy array)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple of numpy vector best individual and best value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralOptimizer.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">population</em>, <em class="sig-param">x_train</em>, <em class="sig-param">y_train</em>, <em class="sig-param">x_test</em>, <em class="sig-param">y_test</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralOptimizer.fit" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>population</strong> – initial population. List of numpy vectors</p></li>
+<li><p><strong>x_train</strong> – train dataset (numpy array)</p></li>
+<li><p><strong>y_train</strong> – labels for train dataset (numpy vector)</p></li>
+<li><p><strong>x_test</strong> – test dataset (numpy array)</p></li>
+<li><p><strong>y_test</strong> – labels for test dataset (numpy vector)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>best chromosome found (numpy vector), best value found for that chromsome (float), training history</p>
+</dd>
+</dl>
+<p>(list of fitness values)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralOptimizer.fitness">
+<code class="sig-name descname">fitness</code><span class="sig-paren">(</span><em class="sig-param">individual</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralOptimizer.fitness" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>individual</strong> – list of individuals</p></li>
+<li><p><strong>x_train</strong> – train dataset (numpy array)</p></li>
+<li><p><strong>y_train</strong> – labels for train dataset (numpy vector)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>best chromosome found (numpy vector), best value found for that chromsome (float), training history</p>
+</dd>
+</dl>
+<p>(list of fitness values), keras.history for the backpropagation training</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralOptimizer.transform_weights">
+<code class="sig-name descname">transform_weights</code><span class="sig-paren">(</span><em class="sig-param">individual</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralOptimizer.transform_weights" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>individual</strong> – chromosome (numpy vector)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reshaped chromosome into Neural Network weight arrangement (list of numpy vectors)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralOptimizer.weights_to_vector">
+<code class="sig-name descname">weights_to_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralOptimizer.weights_to_vector" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of numpy vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralOptimizer.weights_to_vector2">
+<code class="sig-name descname">weights_to_vector2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralOptimizer.weights_to_vector2" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of numpy vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="genetic_optimizer.GeneticNeuralWeightOptimizer">
+<em class="property">class </em><code class="sig-prename descclassname">genetic_optimizer.</code><code class="sig-name descname">GeneticNeuralWeightOptimizer</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">mutation_prob=0.5</em>, <em class="sig-param">mutation_rate=None</em>, <em class="sig-param">elite=2</em>, <em class="sig-param">stop_condition=None</em>, <em class="sig-param">epochs=-1</em>, <em class="sig-param">fitness_function=&lt;function GeneticNeuralWeightOptimizer.&lt;lambda&gt;&gt;</em>, <em class="sig-param">mutables=1</em>, <em class="sig-param">mutation_dist=&lt;built-in method uniform of mtrand.RandomState object&gt;</em>, <em class="sig-param">pop_dist='uniform'</em>, <em class="sig-param">iterations=None</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralWeightOptimizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>GeneticNeuralWeightOptimizer class</p>
+<blockquote>
+<div><p>Initialize Neural Network weights using genetic algorithm.</p>
+</div></blockquote>
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralWeightOptimizer.GA">
+<code class="sig-name descname">GA</code><span class="sig-paren">(</span><em class="sig-param">population</em>, <em class="sig-param">iterations</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">x_test</em>, <em class="sig-param">y_test</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralWeightOptimizer.GA" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>population</strong> – initial population. List of numpy vectors</p></li>
+<li><p><strong>iterations</strong> – integer. Number of generations</p></li>
+<li><p><strong>x</strong> – train dataset (numpy array)</p></li>
+<li><p><strong>y</strong> – labels for train dataset (numpy vector)</p></li>
+<li><p><strong>x_test</strong> – test dataset (numpy array)</p></li>
+<li><p><strong>y_test</strong> – labels for test dataset (numpy vector)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple (best individual found as numpy vector, max value found, history of bests)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralWeightOptimizer.best_of_generation">
+<code class="sig-name descname">best_of_generation</code><span class="sig-paren">(</span><em class="sig-param">fitness</em>, <em class="sig-param">population</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralWeightOptimizer.best_of_generation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fitness</strong> – fitness function</p></li>
+<li><p><strong>population</strong> – list of individuals (numpy array)</p></li>
+<li><p><strong>x</strong> – </p></li>
+<li><p><strong>y</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple of numpy vector best individual and best value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralWeightOptimizer.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">population</em>, <em class="sig-param">x_train</em>, <em class="sig-param">y_train</em>, <em class="sig-param">x_test</em>, <em class="sig-param">y_test</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralWeightOptimizer.fit" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>population</strong> – list of individuals</p></li>
+<li><p><strong>x_train</strong> – train dataset (numpy array)</p></li>
+<li><p><strong>y_train</strong> – labels for train dataset (numpy vector)</p></li>
+<li><p><strong>x_test</strong> – test dataset (numpy array)</p></li>
+<li><p><strong>y_test</strong> – labels for test dataset (numpy vector)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>best chromosome found (numpy vector), best value found for that chromsome (float), training history</p>
+</dd>
+</dl>
+<p>(list of fitness values), keras.history for the backpropagation training</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralWeightOptimizer.fitness">
+<code class="sig-name descname">fitness</code><span class="sig-paren">(</span><em class="sig-param">individual</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralWeightOptimizer.fitness" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>individual</strong> – individual chromosome to mute (numpy vector)</p></li>
+<li><p><strong>x</strong> – dataset to evaluate on the model</p></li>
+<li><p><strong>y</strong> – labels for each point of the dataset x</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>fitness value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralWeightOptimizer.transform_weights">
+<code class="sig-name descname">transform_weights</code><span class="sig-paren">(</span><em class="sig-param">individual</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralWeightOptimizer.transform_weights" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>individual</strong> – chromosome (numpy vector)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reshaped chromosome into Neural Network weight arrangement (list of numpy vectors)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralWeightOptimizer.weights_to_vector">
+<code class="sig-name descname">weights_to_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralWeightOptimizer.weights_to_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform neural network weights to a chromosome
+:return: list of numpy vectors</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticNeuralWeightOptimizer.weights_to_vector2">
+<code class="sig-name descname">weights_to_vector2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticNeuralWeightOptimizer.weights_to_vector2" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of numpy vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="genetic_optimizer.GeneticOptimizer">
+<em class="property">class </em><code class="sig-prename descclassname">genetic_optimizer.</code><code class="sig-name descname">GeneticOptimizer</code><a class="headerlink" href="#genetic_optimizer.GeneticOptimizer" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>GeneticOptimizer Abstract class, define the</dt><dd><p>basic functions of the rest of Genetic Optimizer classes</p>
+<ul class="simple">
+<li><p>fit function: train using Genetic Algorithm</p></li>
+<li><p>GA function</p></li>
+</ul>
+<p>Operations needed durante Genetic Algorithms</p>
+<ul class="simple">
+<li><p>fitness function: evaluating a chromosome</p></li>
+<li><p>generate_population</p></li>
+<li><p>random_selection</p></li>
+<li><p>reproduce</p></li>
+<li><p>mutate</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="genetic_optimizer.GeneticOptimizer.generate_population">
+<code class="sig-name descname">generate_population</code><span class="sig-paren">(</span><em class="sig-param">individuals</em>, <em class="sig-param">distribution='uniform'</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticOptimizer.generate_population" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>numpy array with</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticOptimizer.mutate">
+<code class="sig-name descname">mutate</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">dist=&lt;built-in method uniform of mtrand.RandomState object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticOptimizer.mutate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – individual chromosome to mute (numpy vector)</p></li>
+<li><p><strong>dist</strong> – probability distribution used (default is Uniform)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>mutated x (numpy vector)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticOptimizer.original_weights_shape">
+<code class="sig-name descname">original_weights_shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticOptimizer.original_weights_shape" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>shape of each layer in the neural network (list of numpy vectors)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticOptimizer.random_selection">
+<code class="sig-name descname">random_selection</code><span class="sig-paren">(</span><em class="sig-param">population</em>, <em class="sig-param">distribution=None</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticOptimizer.random_selection" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>population</strong> – list of numpy array</p></li>
+<li><p><strong>distribution</strong> – probability distribution used during selection</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple of two more promising individuals (numpy vectors)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticOptimizer.reproduce">
+<em class="property">static </em><code class="sig-name descname">reproduce</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticOptimizer.reproduce" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – numpy vector of genes</p></li>
+<li><p><strong>y</strong> – numpy vector of genes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>random crossover of x with y as numpy vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="genetic_optimizer.GeneticRegularizator">
+<em class="property">class </em><code class="sig-prename descclassname">genetic_optimizer.</code><code class="sig-name descname">GeneticRegularizator</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">mutation_prob=0.5</em>, <em class="sig-param">mutation_rate=None</em>, <em class="sig-param">elite=2</em>, <em class="sig-param">genetic_train=True</em>, <em class="sig-param">stop_condition=None</em>, <em class="sig-param">epochs=-1</em>, <em class="sig-param">fitness_function=&lt;function GeneticRegularizator.&lt;lambda&gt;&gt;</em>, <em class="sig-param">mutables=1</em>, <em class="sig-param">original_mutation_prob=0.5</em>, <em class="sig-param">pop_dist='uniform'</em>, <em class="sig-param">mutation_dist=&lt;built-in method uniform of mtrand.RandomState object&gt;</em>, <em class="sig-param">callbacks=[]</em>, <em class="sig-param">iterations=None</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticRegularizator" title="Permalink to this definition">¶</a></dt>
+<dd><p>GeneticRegularizator class</p>
+<blockquote>
+<div><p>Using during a backpropagation training, will regularize the whole training if</p>
+<ul class="simple">
+<li><p>If callback is provided and then, the training process is interrupted, or</p></li>
+<li><p>When the training process with backpropagation is finished</p></li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="genetic_optimizer.GeneticRegularizator.GA">
+<code class="sig-name descname">GA</code><span class="sig-paren">(</span><em class="sig-param">population</em>, <em class="sig-param">iterations</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">x_test</em>, <em class="sig-param">y_test</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticRegularizator.GA" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>population</strong> – initial population. List of numpy vectors</p></li>
+<li><p><strong>iterations</strong> – integer. Number of generations</p></li>
+<li><p><strong>x</strong> – train dataset (numpy array)</p></li>
+<li><p><strong>y</strong> – labels for train dataset (numpy vector)</p></li>
+<li><p><strong>x_test</strong> – test dataset (numpy array)</p></li>
+<li><p><strong>y_test</strong> – labels for test dataset (numpy vector)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple (best individual found as numpy vector, max value found, history of bests)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticRegularizator.best_of_generation">
+<code class="sig-name descname">best_of_generation</code><span class="sig-paren">(</span><em class="sig-param">fitness</em>, <em class="sig-param">population</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticRegularizator.best_of_generation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fitness</strong> – fitness function</p></li>
+<li><p><strong>eq</strong> – equation to maximize</p></li>
+<li><p><strong>population</strong> – list of individuals (numpy array)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple of numpy vector best individual and best value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticRegularizator.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">population</em>, <em class="sig-param">x_train</em>, <em class="sig-param">y_train</em>, <em class="sig-param">x_test</em>, <em class="sig-param">y_test</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticRegularizator.fit" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>population</strong> – initial population. List of numpy vectors</p></li>
+<li><p><strong>x_train</strong> – train dataset (numpy array)</p></li>
+<li><p><strong>y_train</strong> – labels for train dataset (numpy vector)</p></li>
+<li><p><strong>x_test</strong> – test dataset (numpy array)</p></li>
+<li><p><strong>y_test</strong> – labels for test dataset (numpy vector)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>best chromosome found (numpy vector), best value found for that chromsome (float), training history</p>
+</dd>
+</dl>
+<p>(list of fitness values)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticRegularizator.fitness">
+<code class="sig-name descname">fitness</code><span class="sig-paren">(</span><em class="sig-param">individual</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticRegularizator.fitness" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>individual</strong> – individual chromosome to mute (numpy vector)</p></li>
+<li><p><strong>x</strong> – dataset to evaluate on the model</p></li>
+<li><p><strong>y</strong> – labels for each point of the dataset x</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>fitness value (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticRegularizator.transform_weights">
+<code class="sig-name descname">transform_weights</code><span class="sig-paren">(</span><em class="sig-param">individual</em><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticRegularizator.transform_weights" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>individual</strong> – chromosome (numpy vector)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reshaped chromosome into Neural Network weight arrangement (list of numpy vectors)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticRegularizator.weights_to_vector">
+<code class="sig-name descname">weights_to_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticRegularizator.weights_to_vector" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of numpy vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="genetic_optimizer.GeneticRegularizator.weights_to_vector2">
+<code class="sig-name descname">weights_to_vector2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#genetic_optimizer.GeneticRegularizator.weights_to_vector2" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of numpy vectors</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Genetic Neural Optimizer’s documentation</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Genetic Neural Optimizer 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Raúl Reguillo Carmona.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>
