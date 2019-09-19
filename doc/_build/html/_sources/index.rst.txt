@@ -8,5 +8,3 @@ Genetic Neural Optimizer's documentation
 
 .. automodule:: genetic_optimizer
     :members:
-
-
