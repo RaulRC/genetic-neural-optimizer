@@ -106,3 +106,31 @@ ga = GeneticRegularizator(model,
 pop = ga.generate_population(POPULATION_LENGTH)
 best, best_value, history_ga, history_bp = ga.fit(pop, x_train, y_train, x_test, y_test) 
 ```
+
+## Tests
+
+Some tests have been defined in order to prove the library. 
+
+Run all tests: 
+
+```bash
+sh run_tests.sh 
+```
+
+Run basic tests only (Glass, Iris, Titnaic, and Wine datasets): 
+
+```bash
+sh basic_tests.sh 
+```
+
+Titanic, MNIST and Fashion-MNIST tests only: 
+
+```bash
+sh mnist_tests.sh
+sh fashion_tests.sh
+```
+
+All the outputs will be generated in ```outputs/``` folder. 
+
+Under ```src/``` folder the main library is implemented: ```genetic_optimizer.py```. Tests and configuration files for them are also included. 
+
