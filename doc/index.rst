@@ -8,15 +8,3 @@ Genetic Neural Optimizer's documentation
 
 .. automodule:: genetic_optimizer
     :members:
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

@@ -64,15 +64,14 @@
 \usepackage{hypcap}% it must be loaded after hyperref.
 % Set up styles of URL: it should be placed after hyperref.
 \urlstyle{same}
-\addto\captionsenglish{\renewcommand{\contentsname}{Contents:}}
 
 \usepackage{sphinxmessages}
-\setcounter{tocdepth}{1}
+
 
 
 
 \title{Genetic Neural Optimizer}
-\date{Sep 18, 2019}
+\date{Sep 19, 2019}
 \release{1.0}
 \author{Raúl Reguillo Carmona}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -141,6 +140,12 @@ tuple (best individual found as numpy vector, max value found, history of bests)
 
 \item {} 
 \sphinxstyleliteralstrong{\sphinxupquote{population}} \textendash{} list of individuals (numpy array)
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{x}} \textendash{} train dataset (numpy array)
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{y}} \textendash{} labels for train dataset (numpy vector)
 
 \end{itemize}
 
@@ -232,10 +237,10 @@ list of numpy vectors
 
 \end{fulllineitems}
 
-\index{weights\_to\_vector2() (genetic\_optimizer.GeneticNeuralOptimizer method)@\spxentry{weights\_to\_vector2()}\spxextra{genetic\_optimizer.GeneticNeuralOptimizer method}}
+\index{weights\_to\_vector\_alt() (genetic\_optimizer.GeneticNeuralOptimizer method)@\spxentry{weights\_to\_vector\_alt()}\spxextra{genetic\_optimizer.GeneticNeuralOptimizer method}}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{index:genetic_optimizer.GeneticNeuralOptimizer.weights_to_vector2}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{weights\_to\_vector2}}}{}{}~\begin{quote}\begin{description}
+\phantomsection\label{\detokenize{index:genetic_optimizer.GeneticNeuralOptimizer.weights_to_vector_alt}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{weights\_to\_vector\_alt}}}{}{}~\begin{quote}\begin{description}
 \item[{Returns}] \leavevmode
 list of numpy vectors
 
@@ -299,10 +304,10 @@ tuple (best individual found as numpy vector, max value found, history of bests)
 \sphinxstyleliteralstrong{\sphinxupquote{population}} \textendash{} list of individuals (numpy array)
 
 \item {} 
-\sphinxstyleliteralstrong{\sphinxupquote{x}} \textendash{} 
+\sphinxstyleliteralstrong{\sphinxupquote{x}} \textendash{} train dataset (numpy array)
 
 \item {} 
-\sphinxstyleliteralstrong{\sphinxupquote{y}} \textendash{} 
+\sphinxstyleliteralstrong{\sphinxupquote{y}} \textendash{} labels for train dataset (numpy vector)
 
 \end{itemize}
 
@@ -390,10 +395,10 @@ Transform neural network weights to a chromosome
 
 \end{fulllineitems}
 
-\index{weights\_to\_vector2() (genetic\_optimizer.GeneticNeuralWeightOptimizer method)@\spxentry{weights\_to\_vector2()}\spxextra{genetic\_optimizer.GeneticNeuralWeightOptimizer method}}
+\index{weights\_to\_vector\_alt() (genetic\_optimizer.GeneticNeuralWeightOptimizer method)@\spxentry{weights\_to\_vector\_alt()}\spxextra{genetic\_optimizer.GeneticNeuralWeightOptimizer method}}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{index:genetic_optimizer.GeneticNeuralWeightOptimizer.weights_to_vector2}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{weights\_to\_vector2}}}{}{}~\begin{quote}\begin{description}
+\phantomsection\label{\detokenize{index:genetic_optimizer.GeneticNeuralWeightOptimizer.weights_to_vector_alt}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{weights\_to\_vector\_alt}}}{}{}~\begin{quote}\begin{description}
 \item[{Returns}] \leavevmode
 list of numpy vectors
 
@@ -587,6 +592,12 @@ tuple (best individual found as numpy vector, max value found, history of bests)
 \item {} 
 \sphinxstyleliteralstrong{\sphinxupquote{population}} \textendash{} list of individuals (numpy array)
 
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{x}} \textendash{} train dataset (numpy array)
+
+\item {} 
+\sphinxstyleliteralstrong{\sphinxupquote{y}} \textendash{} labels for train dataset (numpy vector)
+
 \end{itemize}
 
 \item[{Returns}] \leavevmode
@@ -675,10 +686,10 @@ list of numpy vectors
 
 \end{fulllineitems}
 
-\index{weights\_to\_vector2() (genetic\_optimizer.GeneticRegularizator method)@\spxentry{weights\_to\_vector2()}\spxextra{genetic\_optimizer.GeneticRegularizator method}}
+\index{weights\_to\_vector\_alt() (genetic\_optimizer.GeneticRegularizator method)@\spxentry{weights\_to\_vector\_alt()}\spxextra{genetic\_optimizer.GeneticRegularizator method}}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{index:genetic_optimizer.GeneticRegularizator.weights_to_vector2}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{weights\_to\_vector2}}}{}{}~\begin{quote}\begin{description}
+\phantomsection\label{\detokenize{index:genetic_optimizer.GeneticRegularizator.weights_to_vector_alt}}\pysiglinewithargsret{\sphinxbfcode{\sphinxupquote{weights\_to\_vector\_alt}}}{}{}~\begin{quote}\begin{description}
 \item[{Returns}] \leavevmode
 list of numpy vectors
 
@@ -689,20 +700,6 @@ list of numpy vectors
 
 \end{fulllineitems}
 
-
-
-\chapter{Indices and tables}
-\label{\detokenize{index:indices-and-tables}}\begin{itemize}
-\item {} 
-\DUrole{xref,std,std-ref}{genindex}
-
-\item {} 
-\DUrole{xref,std,std-ref}{modindex}
-
-\item {} 
-\DUrole{xref,std,std-ref}{search}
-
-\end{itemize}
 
 
 \renewcommand{\indexname}{Python Module Index}

@@ -206,7 +206,7 @@ class GeneticNeuralOptimizer(GeneticOptimizer):
         original = np.array(original)
         return original
 
-    def weights_to_vector2(self):
+    def weights_to_vector_alt(self):
         """
 
         :return: list of numpy vectors
@@ -290,6 +290,8 @@ class GeneticNeuralOptimizer(GeneticOptimizer):
         :param fitness: fitness function
         :param eq: equation to maximize
         :param population: list of individuals (numpy array)
+        :param x: train dataset (numpy array)
+        :param y: labels for train dataset (numpy vector)
         :return: tuple of numpy vector best individual and best value
         """
         best = None
@@ -395,7 +397,7 @@ class GeneticNeuralWeightOptimizer(GeneticOptimizer):
         original = np.array(original)
         return original
 
-    def weights_to_vector2(self):
+    def weights_to_vector_alt(self):
         """
 
         :return: list of numpy vectors
@@ -479,8 +481,8 @@ class GeneticNeuralWeightOptimizer(GeneticOptimizer):
 
         :param fitness: fitness function
         :param population: list of individuals (numpy array)
-        :param x:
-        :param y:
+        :param x: train dataset (numpy array)
+        :param y: labels for train dataset (numpy vector)
         :return: tuple of numpy vector best individual and best value
         """
         best = None
@@ -597,7 +599,7 @@ class GeneticRegularizator(GeneticOptimizer):
         original = np.array(original)
         return original
 
-    def weights_to_vector2(self):
+    def weights_to_vector_alt(self):
         """
 
         :return: list of numpy vectors
@@ -631,7 +633,7 @@ class GeneticRegularizator(GeneticOptimizer):
             assert self.epochs > 0, "number of epochs must be positive for genetic_train = True"
             history_bp = self.model.fit(x_train, y_train, validation_data=(x_test, y_test), callbacks=self.callbacks,
                                         epochs=self.epochs)
-            original = self.weights_to_vector2()
+            original = self.weights_to_vector_alt()
             new_population = list()
             new_population.append(original)
             for i in range(len(population)-1):
@@ -695,6 +697,8 @@ class GeneticRegularizator(GeneticOptimizer):
         :param fitness: fitness function
         :param eq: equation to maximize
         :param population: list of individuals (numpy array)
+        :param x: train dataset (numpy array)
+        :param y: labels for train dataset (numpy vector)
         :return: tuple of numpy vector best individual and best value
         """
         best = None
