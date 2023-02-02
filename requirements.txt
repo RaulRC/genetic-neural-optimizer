@@ -34,5 +34,5 @@ termcolor==1.1.0
 toml==0.10.0
 tox==3.12.1
 virtualenv==16.6.0
-Werkzeug==0.15.4
+Werkzeug==0.15.5
 zipp==0.5.1
